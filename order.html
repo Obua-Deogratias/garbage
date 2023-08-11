@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Collection Service Request</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Garbage Collection Service Request</h1>
+        <form action="submit.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" name="contact" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Other form fields -->
+
+            <label for="service-type">Type of Service:</label>
+            <select id="service-type" name="service-type">
+                <option value="regular">Waste Collection Scheduling</option>
+                <option value="bulk">Waste Management Reporting</option>
+                <option value="special">Special Event Cleanup</option>
+            </select>
+
+            <!-- Additional form fields -->
+
+            <label for="agreement">
+                <input type="checkbox" id="agreement" name="agreement" required>
+                I agree to the terms and conditions of the service.
+            </label>
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2023 Garbage Go. All rights reserved.</p>
+    </footer>
+</body>
+</html>
