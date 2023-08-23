@@ -5,41 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GarbageGo</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
 <body>
     <section class="header">
         <nav>
-            <a href="index.html"><img src="11.png" alt=""></a>
-                <div class="nav-links" id="navLinks"></div>
-                    <ul>
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="#serv">SERVICES</a></li>
-                        <li><a href="contact.html">CONTACT US</a></li>
-                    </ul>
+            <img src="11.png" alt="" class="img"></a>
+                <div class="topnav" id="myTopnav">                
+                    <a href="index.html">HOME</a>
+                    <a href="#serv">SERVICES</a>
+                    <a href="contact.html">CONTACT US</a>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                    </a>
                 </div>
-                
         </nav>
         <div  class="text-box">
-            <h1>Welcome to GarbageGo!</h1>
-            <p>Empowering Communities For Sustainable waste management </p>
-            <a href="#about" class="hero">ABOUT US</a>
+            <h1 style="font-size: 30px;">welcome to</h1>
+            <h1 style="font-size: 80px;">GarbageGo</h1>
+            <p></p>
+            <center><a href="#about" class="hr" >ABOUT US</a></center>
         </div>
     </section>
     <!--request-->
     <section class="request">
         <div>
-        <h1>Request and order for our services in any area <br> around Jinja municipality.</h1>
+        <h1>Empowering Communities For Sustainable waste management </h1>
         <a href="login.html" class="hero">REQUEST SERVICE</a>
         </div>
     </section>
 <!---- services ------>
 <section class="service" id="serv">
-    <h1>Services We Offer</h1>
-    <p style="color: black;">We as GarbageGo provide different services to the community and these are as below;</p>
+    <h1  style="color: white;">Services We Offer</h1>
+    <p style="color: white;">We as GarbageGo provide different services to the community and these are as below;</p>
     <div class="row">
         <div class="service-col">
             <h3>Waste Collection Scheduling</h3>
@@ -61,10 +59,10 @@
     <div class="abot">
         <center><h2>ABOUT US</h2>
             <p>
-                Garbage Go is a dedicated platform striving to make a positive impact on waste <br> management and environmental conservation. Our mission is to provide innovative solutions <br> to the growing waste management challenges faced by communities and businesses in Jinja Municipality.
+                Garbage Go is a dedicated platform striving to make a positive impact on waste management and environmental conservation. 
             </p>
             <p>
-             We believe in promoting responsible waste disposal and recycling practices <br> to protect the environment. Our team is passionate about creating a cleaner and greener future for generations to come.
+             We believe in promoting responsible waste disposal to protect the environment. Our team is passionate about creating a cleaner and greener future for generations to come.
             </p></center>
     </div>
         <div class="abt">
@@ -76,10 +74,8 @@
             </div>
                 <div class="abt-col">
                     <h2>Our Mission</h2>
-                        Our mission is to revolutionize waste management and foster a greener, more sustainable Jinja Municipality. We are dedicated to providing innovative solutions to the growing waste challenges faced by communities and businesses.
-                <br> <br>
-               With our innovative technologies and partnerships, we aspire to extend our impact country wide, striving to be a leading force in transforming waste management practices country wide. Together, we can make a significant difference and contribute to a brighter and cleaner future for all.
-            
+                    Our mission is to revolutionize waste management and foster a greener, more sustainable Jinja Municipality. We are dedicated to providing innovative solutions to the growing waste challenges faced by communities and businesses.
+                
         </div>
     <div class="abt-col">
     <h2>Our Values</h2>
@@ -125,8 +121,18 @@
         <button type="submit">Send Message</button>
     </form>
 </section>
+<script>/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }</script>
 <footer>
     <p>&copy; 2023 Garbage Go. All rights reserved.</p>
 </footer>
+
 </body>
 </html>
