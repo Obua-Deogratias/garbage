@@ -6,26 +6,31 @@
     <title>GarbageGo</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </head>
 <body>
     <section class="header">
-        <nav>
-            <img src="11.png" alt="" class="img"></a>
-                <div class="topnav" id="myTopnav">                
-                    <a href="index.html">HOME</a>
-                    <a href="#serv">SERVICES</a>
-                    <a href="#contact">CONTACT US</a>
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
-                    </a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="11.png" alt=""></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link text-light" aria-current="page" href="#">Home</a>
+                  <a class="nav-link text-light" href="#">Services</a>
+                  <a class="nav-link text-light" href="#">Contact</a>
                 </div>
-        </nav>
-        <div  class="text-box">
-            <h1 style="font-size: 30px;">welcome to</h1>
-            <h1 style="font-size: 80px;">GarbageGo!</h1>
-            <p></p>
-            <center><a href="#about" class="hr" >ABOUT US</a></center>
-        </div>
+              </div>
+            </div>
+          </nav>
+          <div class="container bg-transparent">
+            <h4 class="deo1 text-center text-light" style="font-size: 30px; margin-bottom: 30px;">Welcome to</h4>
+            <h1 class="deo text-center text-light">GarbageGo!</h1>
+          </div>
+        
     </section>
     <!--request-->
     <section class="request">
@@ -35,33 +40,41 @@
         </div>
     </section>
 <!---- services ------>
+
 <section class="service" id="serv">
     <h1  style="color: white;">Services We Offer</h1>
     <p style="color: white;">We as GarbageGo provide different services to the community and these are as below;</p>
+    <div class="container bg-transparent">
     <div class="row">
-        <div class="service-col">
+        <div class="col-lg-4 col-sm-12 mt-4">
+            <div class="serv1" >
             <h3>Waste Collection Scheduling</h3>
-            <p>We schedule and manage waste collection services for households, businesses, and communities. We coordinate with waste management companies or local authorities to ensure timely and efficient waste disposal.</p>
+            <p style="padding-bottom: 10px;">We schedule and manage waste collection services for households, businesses, and communities. We coordinate with waste management companies or local authorities to ensure timely and efficient waste disposal.</p>
         </div>
-        <div class="service-col">
+        </div>
+        <div class="col-lg-4 col-sm-12 mt-4">
+            <div class="serv1">
             <h3>Waste Management Reporting</h3>
             <p>We provide reporting and analytics on waste collection, recycling rates, and environmental impact to users, businesses, and local authorities.</p>
         </div>
-        <div class="service-col">
-            <h3>Waste Auditing</h3>
-            <p>We conduct waste audits for businesses and institutions to identify opportunities for waste reduction and recycling improvements.</p>
         </div>
-
+        <div class="col-lg-4 col-sm-12 mt-4">
+            <div class="serv1">
+            <h3>Waste Auditing</h3>
+            <p style="padding-bottom: 55px;">We conduct waste audits for businesses and institutions to identify opportunities for waste reduction and recycling improvements.</p>
+        </div>
+        </div>
+    </div>
     </div>
 </section>
 <!--about-->
 <section id="about">
     <div class="abot">
         <center><h2>ABOUT US</h2>
-            <p>
+            <p class="text-center text-dark p-3">
                 Garbage Go is a dedicated platform striving to make a positive impact on waste management and environmental conservation. 
             </p>
-            <p>
+            <p class="text-center text-dark p-3">
              We believe in promoting responsible waste disposal to protect the environment. Our team is passionate about creating a cleaner and greener future for generations to come.
             </p></center>
     </div>
@@ -103,8 +116,8 @@
 
 <!--contact us-->
 <section id="contact" class="co">
-    <h2>Contact Us</h2>
-    <center><p>Have a question or need assistance? Feel free to get in touch with us.</p></center>
+    <h2 class="text-light">Contact Us</h2>
+    <p class="text-center p-3">Have a question or need assistance? Feel free to get in touch with us.</p>
     <form action="#" method="post">
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" required>
