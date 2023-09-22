@@ -29,6 +29,10 @@
           <div class="container bg-transparent">
             <h4 class="deo1 text-center text-light" style="font-size: 30px; margin-bottom: 30px;">Welcome to</h4>
             <h1 class="deo text-center text-light">GarbageGo!</h1>
+            <center style="margin-top: 80px;">
+            <a href="login.html" class="btn btn-primary" style="margin-right: 10px; padding-left: 25px;padding-right: 25px;">Login</a>
+            <a href="register.html" class="btn btn-danger" style="margin-left: 10px; padding-left: 20px;padding-right: 20px;">Register</a>
+        </center>
           </div>
         
     </section>
@@ -115,22 +119,26 @@
     </script>
 
 <!--contact us-->
-<section id="contact" class="co">
-    <h2 class="text-light">Contact Us</h2>
-    <p class="text-center p-3">Have a question or need assistance? Feel free to get in touch with us.</p>
-    <form action="#" method="post">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required>
+<div class="row mt-5 mb-2">
+    <div class="col-lg-2"></div>
+    <section id="contact" class="col-lg-8">
+        <h2>Contact Us</h2>
+        <center><p>Have a question or need assistance? Feel free to get in touch with us.</p></center>
+        <form action="#" method="post" class="p-5">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
 
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" required>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" required></textarea>
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" required></textarea>
 
-        <button type="submit">Send Message</button>
-    </form>
-</section>
+            <button type="submit" value="message">Send Message</button>
+        </form>
+    </section>
+    <div class="col-lg-2"></div>
+</div>
 <script>/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
     function myFunction() {
       var x = document.getElementById("myTopnav");
