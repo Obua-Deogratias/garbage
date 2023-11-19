@@ -1,0 +1,383 @@
+
+#homedisplay{
+  margin: 0;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ -ms-transform: translate(-50%, -50%);
+ transform: translate(-50%, -50%);
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
+    url("../img/rubbish.jpg");
+    background-position: center;
+    background-size: cover;
+    position: contain;
+    background-repeat: no-repeat;
+}
+.navbar-brand img{
+    width: 100px;
+
+}
+
+.navbar-nav{
+    margin-left: auto;
+
+}
+.navbar-nav .nav-link{
+    /* margin-right: 30px; */
+}
+.deo{
+    font-size: 80px;
+}
+@media(max-width:730px){
+    .deo{
+        font-size: 60px;
+    }
+}
+
+
+/*---services---*/
+
+.service{
+    width: 100%;
+    /* min-height: 100vh; */
+    margin: 2px;
+    text-align: center;
+    padding-top: 1%;
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+
+
+
+}
+p{
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+    text-align: justify;
+
+}
+
+.serv1{
+    background-color: #074210;
+    padding: 20px;
+    border-radius: 2%;
+}
+
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+    color: white;
+}
+p{
+
+text-align: justify;
+}
+.service-col:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 2);
+
+}
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;
+    }
+}
+
+
+/*----- request for service -----*/
+.request{
+    margin: 0px  auto;
+    font-style: justify;
+    width: 100%;
+    height: 40vh auto;
+    background-color: rgb(121, 151, 123);
+    /* border-radius: 10px; */
+    text-align: justify;
+    padding: 5%;
+}
+.request h1{
+    color: black;
+    margin-bottom: 40px;
+    padding: 0;
+
+}
+
+/*-----about page-----*/
+.abot{
+    color: black;
+    flex: auto;
+    background: url();
+}
+
+.abt{
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.abt-col{
+    flex-basis: 31%;
+    background: #074210;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    color: white;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+@media(max-width: 700px){
+    .abt{
+        flex-direction: column;
+    }
+
+}
+
+
+
+/*----contact page----*/
+/* Reset some default styles for consistency */
+body, h1, h2, h3, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* font-family: Arial, sans-serif; */
+    /* line-height: 1.6; */
+    color: #333;
+    /* background-color: #f7f7f7; */
+    /* background-color: #378b29; */
+    background-image: linear-gradient(315deg, #378c99 0%, #378b29 94%);
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)); */
+    /* width: 100%; */
+}
+
+header {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#contact {
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 0 12px 14px rgba(0.2, 0.3, 0, 0.5);
+    /* padding: 20px; */
+}
+
+#contact h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#contact p {
+
+  text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#contact form label {
+  float: left;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+}
+
+#contact form input,
+#contact form textarea {
+  float: left;
+    width: 100%;
+    padding: 5px;
+    color: white;
+    background-color: transparent;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#contact form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#contact form button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    /* padding: 10px; */
+}
+footer{
+    background: white;
+    color: black;
+}
+
+
+/*----login----*/
+
+
+header {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#login {
+    text-align: center;
+    padding: 50px 0;
+}
+
+#login h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#login form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#login form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#login form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#login form button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/*----register----*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 600px) {
+    form {
+        max-width: 80%;
+    }
+}
+
+/*---order---*/

@@ -1,55 +1,187 @@
-<?php
-session_start();
-if (isset($_SESSION["user"])) {
-   header("Location: index.php");
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link type="image/x-icon" rel="icon" href="img/11.ico">
+    <title>Login</title>
+
+
+
 </head>
 <body>
-    <div class="container">
-        <?php
-        if (isset($_POST["login"])) {
-           $email = $_POST["email"];
-           $password = $_POST["password"];
-            require_once "database.php";
-            $sql = "SELECT * FROM users WHERE email = '$email'";
-            $result = mysqli_query($conn, $sql);
-            $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            if ($user) {
-                if (password_verify($password, $user["password"])) {
-                    session_start();
-                    $_SESSION["user"] = "yes";
-                    header("Location: index.php");
-                    die();
+    <?php
+
+    //learn from w3schools.com
+    //Unset all the server side variables
+
+    session_start();
+
+    $_SESSION["user"]="";
+    $_SESSION["usertype"]="";
+
+    // Set the new timezone
+    date_default_timezone_set('Africa/Kampala');
+    $date = date('Y-m-d');
+
+    $_SESSION["date"]=$date;
+
+
+    //import database
+    include("connection.php");
+
+
+
+
+
+    if($_POST){
+
+        $email=$_POST['useremail'];
+        $password=$_POST['userpassword'];
+
+        $error='<label for="promter" class="form-label"></label>';
+
+        $result= $database->query("select * from webuser where email='$email'");
+        if($result->num_rows==1){
+            $utype=$result->fetch_assoc()['usertype'];
+            if ($utype=='p'){
+                $checker = $database->query("select * from client where pemail='$email' and ppassword='$password'");
+                if ($checker->num_rows==1){
+
+
+                    //   client dashbord
+                    $_SESSION['user']=$email;
+                    $_SESSION['usertype']='p';
+
+                    header('location: client/index.php');
+
                 }else{
-                    echo "<div class='alert alert-danger'>Password does not match</div>";
+                    $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
                 }
-            }else{
-                echo "<div class='alert alert-danger'>Email does not match</div>";
+
+            }elseif($utype=='a'){
+                $checker = $database->query("select * from admin where aemail='$email' and apassword='$password'");
+                if ($checker->num_rows==1){
+
+
+                    //   Admin dashbord
+                    $_SESSION['user']=$email;
+                    $_SESSION['usertype']='a';
+
+                    header('location: admin/index.php');
+
+                }else{
+                    $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
+                }
+
+
+            }elseif($utype=='d'){
+                $checker = $database->query("select * from station where docemail='$email' and docpassword='$password'");
+                if ($checker->num_rows==1){
+
+
+                    //   station dashbord
+                    $_SESSION['user']=$email;
+                    $_SESSION['usertype']='d';
+                    header('location: station/index.php');
+
+                }else{
+                    $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
+                }
+
             }
+
+        }else{
+            $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">We cant found any acount for this email.</label>';
         }
-        ?>
-      <form action="login.php" method="post">
-        <div class="form-group">
-            <input type="email" placeholder="Enter Email:" name="email" class="form-control">
+
+
+
+
+
+
+
+    }else{
+        $error='<label for="promter" class="form-label">&nbsp;</label>';
+    }
+
+    ?>
+
+
+
+
+
+    <center>
+    <div class="container">
+        <table border="0" style="margin: 0;padding: 0;width: 60%;">
+            <tr>
+                <td>
+                    <p class="header-text">Welcome Back!</p>
+                </td>
+            </tr>
+        <div class="form-body">
+            <tr>
+                <td>
+                    <p class="sub-text">Login with your details to continue</p>
+                </td>
+            </tr>
+            <tr>
+                <form action="" method="POST" >
+                <td class="label-td">
+                    <label for="useremail" class="form-label">Email: </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-td">
+                    <input type="email" name="useremail" class="input-text" placeholder="Email Address" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-td">
+                    <label for="userpassword" class="form-label">Password: </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label-td">
+                    <input type="Password" name="userpassword" class="input-text" placeholder="Password" required>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td><br>
+                <?php echo $error ?>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value="Login" class="login-btn btn-primary btn">
+                </td>
+            </tr>
         </div>
-        <div class="form-group">
-            <input type="password" placeholder="Enter Password:" name="password" class="form-control">
-        </div>
-        <div class="form-btn">
-            <input type="submit" value="Login" name="login" class="btn btn-primary">
-        </div>
-      </form>
-     <div><p>Not registered yet <a href="registration.php">Register Here</a></p></div>
+            <tr>
+                <td>
+                    <br>
+                    <label for="" class="sub-text" style="font-weight: 280;">Don't have an account&#63; </label>
+                    <a href="signup.php" class="hover-link1 non-style-link">Sign Up</a> or
+                    <a href="index.php" class="hover-link1 non-style-link">Back Home Up</a>
+                    <br><br><br>
+                </td>
+            </tr>
+
+
+
+
+                    </form>
+        </table>
+
     </div>
+</center>
 </body>
 </html>
